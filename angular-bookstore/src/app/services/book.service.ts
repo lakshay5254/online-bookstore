@@ -9,8 +9,9 @@ import { Book } from '../common/book';
 export class BookService {
   private baseUrl="http://localhost:8080/api/v1/books";
   constructor(private httpClient: HttpClient) { } //injecting http client object into our class
-  getBooks():Observable<Book[]>{ //get returns Observable array buffer to get array we mention return type
-    return this.httpClient.get<GetResponseBooks>(this.baseUrl).pipe(map(response => response._embedded.books));// getting books data
+  getBooks(theCategoryId: number): Observable<Book[]>{ //get returns Observable array buffer to get array we mention return type
+    const searchUrl = `${this.baseUrl}/search/categoryid?id=${theCategoryId}`;
+    return this.httpClient.get<GetResponseBooks>(searchUrl).pipe(map(response => response._embedded.books));// getting books data
   } //when we issue get req the response will get mapped into get response books
 }
 
