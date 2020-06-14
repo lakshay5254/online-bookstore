@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.bookstore.onlinebookstore.entity.Book;
 
-@CrossOrigin("*")
+
 public interface BookRepository extends JpaRepository<Book,Long>{
 	@RestResource(path="categoryid")
 	Page<Book> findByCategoryId(@Param("id") Long id, Pageable pageable);
