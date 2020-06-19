@@ -1,5 +1,11 @@
 <div class="list-group">
+<<<<<<< HEAD
     <a routerLink="/category/{{category.id}}" *ngFor="let category of bookCategories" class="list-group-item" routerLinkActive="bg-primary text-white font-weight-bold">{{category.categoryName }}</a>
     
 
   </div>
+=======
+  <a [routerLink]="'/category/'+category.id" *ngFor="let category of bookCategories" class="list-group-item" 
+    routerLinkActive="bg-primary text-white font-weight-bold">{{category.categoryName}}</a>
+</div>
+>>>>>>> refs/heads/search-by-keyword
